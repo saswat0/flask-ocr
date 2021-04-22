@@ -1,0 +1,56 @@
+2021-03-10 08:30:05,621 INFO:             errors [in server.py:82]
+2021-03-10 08:30:35,486 ERROR:             Exception on /upload [POST] [in /home/user/.local/lib/python3.6/site-packages/flask/app.py:1892]
+Traceback (most recent call last):
+  File "/home/user/.local/lib/python3.6/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/user/.local/lib/python3.6/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/user/.local/lib/python3.6/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/user/.local/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/user/.local/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/user/.local/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "server.py", line 41, in upload_file
+    rec_string = process_image(path=path)
+  File "/home/user/flask-ocr/pre_img.py", line 25, in process_image
+    rec_string =  pytesseract.image_to_string(cao,lang='chi_sim')
+  File "/home/user/.local/lib/python3.6/site-packages/pytesseract/pytesseract.py", line 413, in image_to_string
+    }[output_type]()
+  File "/home/user/.local/lib/python3.6/site-packages/pytesseract/pytesseract.py", line 412, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+  File "/home/user/.local/lib/python3.6/site-packages/pytesseract/pytesseract.py", line 287, in run_and_get_output
+    run_tesseract(**kwargs)
+  File "/home/user/.local/lib/python3.6/site-packages/pytesseract/pytesseract.py", line 263, in run_tesseract
+    raise TesseractError(proc.returncode, get_errors(error_string))
+pytesseract.pytesseract.TesseractError: (1, 'Error opening data file /usr/share/tesseract-ocr/4.00/tessdata/chi_sim.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'chi_sim\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+2021-03-10 08:31:42,095 INFO:             errors [in server.py:82]
+2021-03-10 08:35:29,191 INFO:             errors [in server.py:82]
+2021-03-10 08:44:08,791 INFO:             errors [in server.py:78]
+2021-03-10 08:44:19,626 ERROR:             Exception on /upload [POST] [in /home/user/.local/lib/python3.6/site-packages/flask/app.py:1892]
+Traceback (most recent call last):
+  File "/home/user/.local/lib/python3.6/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/user/.local/lib/python3.6/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/user/.local/lib/python3.6/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/user/.local/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/user/.local/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/user/.local/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "server.py", line 37, in upload_file
+    rec_string = process_image(path=path)
+  File "/home/user/flask-ocr/pre_img.py", line 27, in process_image
+    rec_string =  reader.readtext(cao, detail=0) #pytesseract.image_to_string(cao,lang='chi_sim')
+  File "/home/user/.local/lib/python3.6/site-packages/easyocr/easyocr.py", line 380, in readtext
+    img, img_cv_grey = reformat_input(image)
+  File "/home/user/.local/lib/python3.6/site-packages/easyocr/utils.py", line 684, in reformat_input
+    LOGGER.warning('Invalid input type. Suppoting format = string(file path or url), bytes, numpy array')
+NameError: name 'LOGGER' is not defined
+2021-03-10 08:46:20,347 INFO:             errors [in server.py:78]
+2021-03-10 08:48:37,842 INFO:             errors [in server.py:78]
